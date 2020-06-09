@@ -5,9 +5,35 @@
 {% block content %}
 
   <h1>Make buggy</h1>
+  <p>
+    {{ msg }}
+  </p>
+  
   <form action="/new" method="post">
     <label for="qty_wheels">Number of wheels:</label>
-    <input type="text" name="qty_wheels" />
+    <input type="text" name="qty_wheels" value="{{ buggy['qty_wheels']}}" />
+	<br>
+	
+	<label for="flag_color">The Flag Colour:</label>
+	<input type="text" name="flag_color" />
+	<br>
+	
+	<label for="flag_pattern">The Flag Pattern:</label>
+	<select class ="select-css" name="flag_pattern" />
+		<option>plain</option> 
+		<option>vstripe</option>
+		<option>hstripe</option>
+		<option>dstripe</option>
+		<option>checker</option>
+		<option>spot</option>
+	</select>
+	<br>
+	
+	<label for="hamster_booster">Number of Hamster Boosters:</label>
+	<input type="text" name="hamster_booster" />
+	<br>
+
+	
     <input type="submit" class="button">
   </form>
   <p>
